@@ -1,0 +1,40 @@
+body {
+  background-color: #fafafa;
+}
+
+.footer {
+  height: 60px;
+  line-height: 60px;
+}
+
+.aside-info {
+  position: fixed;
+}
+
+.login {
+  margin-top: 10vh;
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+
+#comment input {
+  border: none;
+  border-width: 0;
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+}
