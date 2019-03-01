@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import setAuthToken from './utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 import { setCurrentUser, logoutUser } from './actions/authActions';
+import PrivateRoute from './components/common/PrivateRoute';
 
-import Welcome from './components/layout/Welcome';
-import About from './components/layout/About';
-import Author from './components/layout/Author';
-import Latest from './components/layout/Latest';
+import Welcome from './components/pages/Welcome';
+import About from './components/pages/About';
+import Author from './components/pages/Author';
+import Latest from './components/pages/Latest';
 import Login from './components/auth/Login';
-import Feed from './components/layout/Feed';
+import Feed from './components/pages/Feed';
+import AddPhoto from './components/pages/AddPhoto';
 
 import './App.css';
 
@@ -46,7 +48,12 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/author" component={Author} />
             <Route exact path="/latest" component={Latest} />
-            <Route exact path="/feed" component={Feed} />
+            <Switch>
+              <PrivateRoute exact path="/feed" component={Feed} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/add" component={AddPhoto} />
+            </Switch>
           </div>
         </Router>
       </Provider>

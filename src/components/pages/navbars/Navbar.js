@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import logo from '../../../img/instagram.png';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -9,6 +9,7 @@ class Navbar extends Component {
   onLogoutClick(e) {
     e.preventDefault();
     this.props.logoutUser();
+    this.props.history.push('/login');
   }
 
   render() {
@@ -49,7 +50,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand navbar-light sticky-top bg-white border-bottom mb-md-5">
         <div className="container">
           <Link to={isAuthenticated ? '/feed' : '/'} className="navbar-brand">
-            <img src={logo} alt="brand logo" width="30" height="30" />
+            <img src={logo} alt="brand logo" width="30px" height="30px" />
             <span className="d-none d-md-inline"> Instagram</span>
           </Link>
           <div className="d-none d-md-block m-auto form-group has-search">
@@ -76,4 +77,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { logoutUser }
-)(Navbar);
+)(withRouter(Navbar));
