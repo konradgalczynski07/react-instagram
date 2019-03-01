@@ -14,6 +14,7 @@ import Latest from './components/pages/Latest';
 import Login from './components/auth/Login';
 import Feed from './components/pages/Feed';
 import AddPhoto from './components/pages/AddPhoto';
+import Profile from './components/pages/Profile';
 
 import './App.css';
 
@@ -48,6 +49,7 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/author" component={Author} />
             <Route exact path="/latest" component={Latest} />
+            <Route exact path="/profile/:handle" component={Profile} />
             <Switch>
               <PrivateRoute exact path="/feed" component={Feed} />
             </Switch>

@@ -14,6 +14,7 @@ class Photo extends Component {
               className="img-fluid border rounded-circle"
               style={{ width: '40px' }}
               src="img/avatar.png"
+              alt=""
             />
           </Link>
           <div className="ml-3">
@@ -27,6 +28,7 @@ class Photo extends Component {
           className="img-fluid"
           src="https://source.unsplash.com/random/"
           style={{ maxHeight: '700px' }}
+          alt=""
         />
         <div className="card-body">
           <section>
