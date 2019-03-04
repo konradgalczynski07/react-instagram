@@ -5,7 +5,7 @@ export default function FeedAside(props) {
   return (
     <div className="aside-info">
       <div className="d-flex align-items-center mb-3">
-        <Link to="/profile">
+        <Link to={`/profile/${props.user.username}`}>
           <img
             className="img-fluid border rounded-circle"
             style={{ width: '50px' }}
@@ -14,7 +14,10 @@ export default function FeedAside(props) {
           />
         </Link>
         <div className="flex-row ml-3">
-          <Link to="/profile" className="text-decoration-none">
+          <Link
+            to={`/profile/${props.user.username}`}
+            className="text-decoration-none"
+          >
             <h6 className="font-weight-bold text-dark m-0">
               {props.user.username}
             </h6>
