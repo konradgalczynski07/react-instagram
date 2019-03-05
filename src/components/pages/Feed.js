@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getUserFeed } from '../../actions/profileActions';
+import { getUserFeed } from '../../actions/feedActions';
 import Spinner from '../common/Spinner';
 
 import FeedNavbar from './navbars/FeedNavbar';
 import FeedAside from './partials/FeedAside';
-import FeedPhoto from './partials/FeedPhoto';
+import FeedPhotos from './partials/FeedPhotos';
 import BottomNavbar from './partials/BottomNavbar';
 
 class Feed extends Component {
@@ -24,8 +24,7 @@ class Feed extends Component {
     } else {
       // Check if user has photos to display
       if (feed.count > 0) {
-        feedContent = <FeedPhoto photos={feed.results} />;
-        // feedContent = <p>hi</p>;
+        feedContent = <FeedPhotos photos={feed.results} />;
       } else {
         // User has no photos to display
         feedContent = (

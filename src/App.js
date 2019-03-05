@@ -15,6 +15,7 @@ import Login from './components/auth/Login';
 import Feed from './components/pages/Feed';
 import AddPhoto from './components/pages/AddPhoto';
 import Profile from './components/pages/Profile';
+import NotFound from './components/pages/NotFound';
 
 import './App.css';
 
@@ -56,6 +57,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/add" component={AddPhoto} />
             </Switch>
+            <Route exact path="/not-found" component={NotFound} />
           </div>
         </Router>
       </Provider>
