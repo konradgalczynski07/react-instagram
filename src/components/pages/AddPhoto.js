@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import AddNavbar from './navbars/AddNavbar';
-import { addPhoto } from '../../actions/profileActions';
+import { addPhoto } from '../../actions/postActions';
 
 class AddPhoto extends Component {
   constructor() {

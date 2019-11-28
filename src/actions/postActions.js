@@ -6,7 +6,7 @@ import { getUserFeed } from './feedActions';
 // Add Photo
 export const addPhoto = (photoData, history) => dispatch => {
   axios
-    .post('http://localhost:8000/api/post/', photoData)
+    .post('http://localhost:8000/api/posts/', photoData)
     .then(res => history.push('/feed'))
     .catch(err =>
       dispatch({
@@ -19,7 +19,7 @@ export const addPhoto = (photoData, history) => dispatch => {
 // Add Comment
 export const addComment = (postId, commentData) => dispatch => {
   axios
-    .post(`http://localhost:8000/api/post/comment/${postId}/`, commentData)
+    .post(`http://localhost:8000/api/posts/comment/${postId}/`, commentData)
     .then(res => dispatch(getUserFeed()))
     .catch(err =>
       dispatch({
@@ -32,7 +32,7 @@ export const addComment = (postId, commentData) => dispatch => {
 // Toggle Like
 export const toggleLike = postId => dispatch => {
   axios
-    .get(`http://localhost:8000/api/post/like/${postId}/`)
+    .get(`http://localhost:8000/api/posts/like/${postId}/`)
     .then(res => dispatch(getUserFeed()))
     .catch(err =>
       dispatch({
